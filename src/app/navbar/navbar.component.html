@@ -1,0 +1,39 @@
+<nav style="background-color: black;">
+        <a style="color: grey;">Pizzeria </a>
+        <a routerLink='/Link'></a>
+        <a routerLink='/Home'><img src="../assets/PizzeriaLogo.png" style="height: 50px;width: 50px;"></a>
+        <a routerLink='/Order' style="color: grey;margin-left:15px;margin-right:15px ;">Order Pizza</a>
+        <a routerLink='/Build' style="color: grey;margin-left:15px;margin-right:15px ;">Build your Pizza</a>
+        <!-- <a routerLink='/Cart'  style="float: right;color: white;"><button type="button" class="btn btn-warning" style="margin-top: 6px;color: white;" (click)="ShoppingCart()"><i class="fa fa-shopping-cart" style="color: white;"></i>Shopping cart</button></a> -->
+
+
+        <button [matMenuTriggerFor]="menu" #createPlanmenuTrigger="matMenuTrigger" #matMenuTrigger="matMenuTrigger" id="dropbtn" style="float: right; margin: 6px; color: white;" 
+                class="btn btn-warning" (mouseenter)="matMenuTrigger.openMenu()"  ><mat-icon>shopping_cart</mat-icon> Shopping cart</button>
+                
+                <mat-menu #menu="matMenu">
+                        <div  style="display: inline;" (mouseleave)="matMenuTrigger.closeMenu()">
+                        
+                          <mat-card *ngFor="let cart of CartList">
+                            <table>
+                              <tr>
+                                <td><strong>{{cart.name}}</strong></td>
+                                <td><img style="height: 100px;width: 100px;" src="{{cart.image}}"/></td>
+                              </tr>
+  
+                              <tr>
+                                <td><strong>&#8377; {{cart.price}}</strong></td>
+                              </tr>
+                              <tr>
+                                  
+                              </tr>
+                            </table>
+                          </mat-card>
+                          
+                          <mat-card>
+                          <button (click)="ShoppingCart()" class="btn btn-warning" style="float: right; margin: 6px; color: white;">checkout</button>
+                          <br><br>
+                          </mat-card>
+                        </div>
+                      </mat-menu>
+
+</nav>

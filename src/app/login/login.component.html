@@ -1,0 +1,13 @@
+<div class="container">
+        <div style="text-align: center ;">
+            <h1>Login</h1>
+            <form [formGroup]="UserLogin" (ngSubmit)="submit()">
+                <label >Username:</label>
+                <input type="text" formControlName="username"><br><br>
+                <label for="">Password:</label>
+                <input type="text" formControlName="password"><br><br>
+                <button   class="btn btn-success">Submit</button>
+            </form>
+            <span>New User? <a routerLink='/Register'>Register</a></span>
+        </div>
+    </div>

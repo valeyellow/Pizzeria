@@ -1,0 +1,15 @@
+.veg {
+    fill : green;
+}
+
+.nonveg {
+    fill : red;
+}
+
+
+#main-container {
+    margin-top: 10px;
+    width: 80%;
+    border:1px solid black; 
+    height: 260px;
+}

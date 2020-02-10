@@ -1,0 +1,74 @@
+<!-- <div class="container"  style="display: inline;">
+    
+        <div class="cont" *ngFor="let pizza of PizzaList" >
+            <div style="border: 1px solid black; margin-top: 10px;padding: 10px; padding-right: 0px;">
+            <div class="row">
+                <div class="col-2">
+                    <h6>{{pizza.name}}</h6>
+                        <div *ngIf="pizza.type === 'veg'; else marker" >
+                                <svg width="20" height="20" class="veg">
+                                    <rect width="15" height="15"/>
+                                </svg>
+                        </div>
+                        <ng-template #marker>
+                                <svg width="20" height="20" class="nonveg">
+                                    <rect width="15" height="15"/>
+                                </svg>
+                        </ng-template>
+                        <br>    
+                        <b>₹ {{pizza.price}}</b>
+                </div>
+                <div class="col-2" style="font-size: 11px;">
+                    {{pizza.description}} <br><br>
+                    <b>ingredients: <br> </b>
+                    {{pizza.ingredients}} <br><br>
+                    <b>topping: <br> </b>
+                    {{pizza.topping}} <br><br>
+                </div>
+                <div class="col-2">
+                    <img src="{{pizza.image}}" style="height: 100px; width: 100px; margin-top: 30px;" alt="">
+                    <button class="btn btn-warning" style="color: white;"> Add to Cart</button>
+                </div>
+            </div>
+        </div>
+     
+        </div>
+    </div>
+<footer style=" margin-top:2%;color: orange;text-align: center; font-size: 15px;">Copyrights @2017 Pizzeria. All rights reserved</footer> -->
+
+
+         <div class="container">
+             <div class="row">
+                <div class="col-6" id="main-container" *ngFor="let pizza of PizzaList" style="box-shadow: 1px 2px 2px 2px grey;" >
+                        <div class="row">
+                                <div class="col-4">
+                                    <h6>{{pizza.name}}</h6>
+                                        <div *ngIf="pizza.type === 'veg'; else marker" >
+                                                <svg width="20" height="20" class="veg">
+                                                    <rect width="15" height="15"/>
+                                                </svg>
+                                        </div>
+                                        <ng-template #marker>
+                                                <svg width="20" height="20" class="nonveg">
+                                                    <rect width="15" height="15"/>
+                                                </svg>
+                                        </ng-template>
+                                        <br>    
+                                        <b>₹ {{pizza.price}}</b>
+                                </div>
+                                <div class="col-4" style="font-size: 11px;">
+                                    {{pizza.description}} <br><br>
+                                    <b>Ingredients: <br> </b>
+                                    {{pizza.ingredients}} <br><br>
+                                    <b>Topping: <br> </b>
+                                    {{pizza.topping}} <br><br>
+                                </div>
+                                <div class="col-4">
+                                    <img src="{{pizza.image}}" style="height: 100px; width: 100px; margin-top: 30px;" alt="">
+                                    <button class="btn btn-warning" style="color: white;" (click)="addToCart($event, pizza)"> Add to Cart</button>
+                                </div>
+                </div>
+             </div> 
+            </div> 
+<footer style=" margin-top:2%;color: orange;text-align: center;font-size: 15px;">Copyrights @2017 Pizzeria. All rights reserved</footer>
+            

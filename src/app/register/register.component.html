@@ -1,0 +1,15 @@
+<div class="container">
+        <div style="text-align: center ;">
+            <h1>Register</h1>
+            <form [formGroup]="UserRegister" (ngSubmit)="register()">
+                <label >Username:</label>
+                <input type="text" formControlName="username"><br><br>
+                <label for="">Password:</label>
+                <input type="text" formControlName="password"><br><br>
+                <label for=""> Confirm Password:</label>
+                <input type="text" formControlName="confirmpassword"><br><br>
+                <button   class="btn btn-success" (click)=submit()>Submit</button>
+            </form>
+        </div>
+    </div>
+
